@@ -1,0 +1,19 @@
+{
+  "name": "portfolio",
+  "version": "0.0.1",
+  "description": "Atul's Portfolio",
+  "dependencies": {
+    "babel": "^5.8.12",
+    "marked": "^0.3.3",
+    "through2": "^2.0.0",
+    "vinyl": "^0.5.0",
+    "yaml-front-matter": "^3.2.3",
+    "gulp": "^3.9.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "gulp"
+  },
+  "author": "Atul Varma <varmaa@gmail.com>",
+  "license": "ISC"
+}
