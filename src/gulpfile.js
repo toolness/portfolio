@@ -9,6 +9,7 @@ let marked = require('marked');
 let through2 = require('through2');
 let File = require('vinyl');
 
+let smartypants = require('./smartypants');
 let pages = require('../pages');
 
 const BUILD_TASKS = [
@@ -26,6 +27,10 @@ function parseYamlFrontMatter() {
     let contents = file.contents.toString(enc);
     file.yaml = yamlFront.loadFront(contents);
     file.markdown = file.yaml.__content;
+    ['title', 'problem'].forEach(name => {
+      if (name in file.yaml)
+        file.yaml[name] = smartypants(file.yaml[name]);
+    });
     delete file.yaml.__content;
     cb(null, file);
   });
