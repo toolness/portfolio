@@ -14,5 +14,7 @@ beautiful typography.
 
 The result is called [Parchment][].
 
+<a class="button button-primary" href="http://parchment.toolness.com/">Try It</a>
+
 [Gnusto]: https://blogs.gnome.org/tthurman/2008/07/07/parchment/
 [Parchment]: http://www.toolness.com/wp/2008/06/introducing-parchment/

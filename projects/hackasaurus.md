@@ -11,8 +11,9 @@ understanding the very basics of how it works. This led to the creation
 of a tool called [Web X-Ray Goggles][], which lets anyone with basic computer
 skills peer underneath the surface of any Web page, tinker with it, 
 and share their changes. The tool was originally embodied in a kid
-and family-friendly program called [Hackasaurus][].
+and family-friendly program called Hackasaurus.
+
+<a class="button button-primary" href="http://hackasaurus.toolness.org/">View The Archived Site</a>
 
 [Kids and The Open Web]: http://www.toolness.com/wp/2009/09/kids-and-the-open-web/
 [Web X-Ray Goggles]: http://goggles.webmaker.org/
-[Hackasaurus]: http://hackasaurus.toolness.org/
