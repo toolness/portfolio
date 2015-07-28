@@ -14,9 +14,9 @@ exports.renderProjectPage = (file) => {
 
 exports.renderIndexPage = (allPages) => {
   return React.renderToStaticMarkup(
-    <BasePage title="Atul's Portfolio">
-      <h1>Atul's Portfolio</h1>
-      <p>These are the problems I've tried to solve.</p>
+    <BasePage title="Atul’s Portfolio">
+      <h1>Atul’s Portfolio</h1>
+      <p>Here are some problems I’ve tried to solve.</p>
       <ul>
         {allPages.map(file => {
           return (
