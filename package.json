@@ -4,13 +4,16 @@
   "description": "Atul's Portfolio",
   "dependencies": {
     "babel": "^5.8.12",
+    "express": "^4.13.1",
+    "gulp": "^3.9.0",
+    "gulp-gzip": "^1.2.0",
+    "gulp-s3": "^0.3.0",
+    "gutil": "^1.6.4",
     "marked": "^0.3.3",
+    "react": "^0.13.3",
     "through2": "^2.0.0",
     "vinyl": "^0.5.0",
-    "yaml-front-matter": "^3.2.3",
-    "react": "^0.13.3",
-    "express": "^4.13.1",
-    "gulp": "^3.9.0"
+    "yaml-front-matter": "^3.2.3"
   },
   "devDependencies": {},
   "scripts": {
