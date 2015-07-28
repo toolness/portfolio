@@ -7,8 +7,14 @@ let File = require('vinyl');
 
 let pages = require('../pages');
 
+const BUILD_TASKS = [
+  'build-html-pages',
+  'copy-vendor-files'
+];
+
 let paths = {
-  projects: 'projects/*.md'
+  projects: 'projects/*.md',
+  vendor: 'vendor/**'
 };
 
 function parseYamlFrontMatter() {
@@ -54,7 +60,12 @@ function buildHtmlPages() {
   });
 }
 
-gulp.task('default', ['build-html-pages']);
+gulp.task('default', BUILD_TASKS);
+
+gulp.task('copy-vendor-files', () => {
+  return gulp.src(paths.vendor)
+    .pipe(gulp.dest('./dist/vendor'));
+});
 
 gulp.task('build-html-pages', () => {
   return gulp.src(paths.projects)
@@ -64,7 +75,7 @@ gulp.task('build-html-pages', () => {
     .pipe(gulp.dest('./dist'));
 });
 
-gulp.task('watch', ['build-html-pages'], cb => {
+gulp.task('watch', BUILD_TASKS, cb => {
   gulp.watch('pages/*.js', () => {
     try {
       pages = pages.reload();
@@ -74,5 +85,8 @@ gulp.task('watch', ['build-html-pages'], cb => {
     }
     gulp.start('build-html-pages');
   });
+
   gulp.watch(paths.projects, ['build-html-pages']);
+
+  gulp.watch(paths.vendor, ['copy-vendor-files']);
 });
