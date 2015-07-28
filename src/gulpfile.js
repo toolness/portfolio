@@ -5,6 +5,8 @@ let marked = require('marked');
 let through2 = require('through2');
 let File = require('vinyl');
 
+let pages = require('../pages');
+
 let paths = {
   projects: 'projects/*.md'
 };
@@ -28,16 +30,6 @@ function renderMarkdown() {
   });
 }
 
-function renderProjectPage(file) {
-  return file.html;
-}
-
-function renderIndexPage(allPages) {
-  return allPages.map(file => {
-    return `<a href="${file.pageURL}">${file.yaml.problem}</a>`;
-  }).join('<br>');
-}
-
 function buildHtmlPages() {
   let all = [];
   return through2.obj((file, enc, cb) => {
@@ -47,7 +39,7 @@ function buildHtmlPages() {
       cwd: file.cwd,
       base: file.base,
       path: path.join(file.base, relativeDir, 'index.html'),
-      contents: new Buffer(renderProjectPage(file))
+      contents: new Buffer(pages.renderProjectPage(file))
     });
     all.push(file);
     return cb(null, file.page);
@@ -56,7 +48,7 @@ function buildHtmlPages() {
       cwd: __dirname,
       base: __dirname,
       path: path.join(__dirname, 'index.html'),
-      contents: new Buffer(renderIndexPage(all))
+      contents: new Buffer(pages.renderIndexPage(all))
     }));
     cb();
   });
@@ -73,5 +65,14 @@ gulp.task('build-html-pages', () => {
 });
 
 gulp.task('watch', ['build-html-pages'], cb => {
+  gulp.watch('pages/*.js', () => {
+    try {
+      pages = pages.reload();
+    } catch (e) {
+      console.log(e.stack);
+      return;
+    }
+    gulp.start('build-html-pages');
+  });
   gulp.watch(paths.projects, ['build-html-pages']);
 });
