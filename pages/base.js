@@ -5,6 +5,7 @@ let BasePage = React.createClass({
     return (
       <html>
         <head>
+          <meta charSet="utf-8"/>
           <title>{this.props.title}</title>
           <link rel="stylesheet" href="/vendor/skeleton/normalize.css"/>
           <link rel="stylesheet" href="/vendor/skeleton/skeleton.css"/>
