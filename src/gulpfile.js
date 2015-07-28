@@ -38,7 +38,7 @@ function renderIndexPage(allPages) {
   }).join('<br>');
 }
 
-function buildPages() {
+function buildHtmlPages() {
   let all = [];
   return through2.obj((file, enc, cb) => {
     let relativeDir = file.relative.match(/(.+)\.md$/)[1];
@@ -62,16 +62,16 @@ function buildPages() {
   });
 }
 
-gulp.task('default', ['build-pages']);
+gulp.task('default', ['build-html-pages']);
 
-gulp.task('build-pages', () => {
+gulp.task('build-html-pages', () => {
   return gulp.src(paths.projects)
     .pipe(parseYamlFrontMatter())
     .pipe(renderMarkdown())
-    .pipe(buildPages())
+    .pipe(buildHtmlPages())
     .pipe(gulp.dest('./dist'));
 });
 
-gulp.task('watch', () => {
-  gulp.watch(paths.projects, ['build-pages']);
+gulp.task('watch', ['build-html-pages'], cb => {
+  gulp.watch(paths.projects, ['build-html-pages']);
 });
