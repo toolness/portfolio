@@ -1,4 +1,5 @@
 let path = require('path');
+let express = require('express');
 let gulp = require('gulp');
 let yamlFront = require('yaml-front-matter');
 let marked = require('marked');
@@ -89,4 +90,12 @@ gulp.task('watch', BUILD_TASKS, cb => {
   gulp.watch(paths.projects, ['build-html-pages']);
 
   gulp.watch(paths.vendor, ['copy-vendor-files']);
+
+  let app = express();
+
+  app.use(express.static(path.join(__dirname, '..', 'dist')));
+
+  app.listen(8080, function() {
+    console.log("Development server is listening on port 8080.");
+  });
 });

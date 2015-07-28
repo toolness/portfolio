@@ -9,6 +9,7 @@
     "vinyl": "^0.5.0",
     "yaml-front-matter": "^3.2.3",
     "react": "^0.13.3",
+    "express": "^4.13.1",
     "gulp": "^3.9.0"
   },
   "devDependencies": {},
