@@ -1,6 +1,6 @@
 ---
 title: Slowmo-JS
-problem: Understanding how JavaScript is evaluated can be hard.
+problem: Understanding how a computer interprets JavaScript can be hard.
 year: 2013
 importance: 3
 ---
