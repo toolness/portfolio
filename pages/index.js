@@ -12,20 +12,26 @@ exports.renderProjectPage = (file) => {
   );
 };
 
+function uncapitalize(str) {
+  return str[0].toLowerCase() + str.slice(1);
+}
+
 exports.renderIndexPage = (allPages) => {
   return React.renderToStaticMarkup(
     <BasePage title="Atul’s Portfolio">
-      <h1>Atul’s Portfolio</h1>
-      <p>Here are some problems I’ve tried to solve.</p>
-      <ul>
+      <h1>Hi, I'm Atul.</h1>
+      <p>I'm a <strong>design-driven engineer</strong>.</p>
+      <p>I <strong>empathize</strong> with users, <strong>perceive</strong> problems, and <strong>build</strong> solutions for them.</p>
+
         {allPages.map(file => {
           return (
-            <li key={file.pageURL}>
-              <a href={file.pageURL}>{file.yaml.problem}</a>
-            </li>
+            <div key={file.pageURL}>
+              <h5><a href={file.pageURL}>{file.yaml.title}</a></h5>
+              <p>Because {uncapitalize(file.yaml.problem || '')}</p>
+            </div>
           );
         })}
-      </ul>
+
     </BasePage>
   );
 };

@@ -1,6 +1,6 @@
 ---
 title: Hackasaurus
-problem: No one understands what's underneath the surface of the Web.
+problem: No one understands the rich world that lies beneath the surface of every Web page.
 year: 2011-2012
 importance: 1
 ---

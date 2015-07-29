@@ -1,6 +1,6 @@
 ---
 title: Security Adventure
-problem: Learning about Web security is dry, boring, and overwhelming.
+problem: Learning about Web security shouldn't be boring and overwhelming.
 year: 2013
 importance: 2
 ---

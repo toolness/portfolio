@@ -1,6 +1,6 @@
 ---
 title: Parchment
-problem: Experiencing Interactive Fiction is hard.
+problem: Experiencing Interactive Fiction shouldn't be hard.
 year: 2008
 importance: 2
 ---

@@ -1,6 +1,6 @@
 ---
 title: Slowmo-JS
-problem: Understanding how JavaScript is evaluated is hard, even with a debugger.
+problem: Understanding how JavaScript is evaluated can be hard.
 year: 2013
 importance: 3
 ---
