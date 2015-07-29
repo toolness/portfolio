@@ -3,6 +3,7 @@ let React = require('React/addons');
 let BasePage = require('./base');
 
 let HomePage = React.createClass({
+  mixins: [React.addons.PureRenderMixin],
   render() {
     let allPages = this.props.allPages;
 

@@ -1,6 +1,7 @@
 let React = require('react/addons');
 
 let BasePage = React.createClass({
+  mixins: [React.addons.PureRenderMixin],
   render() {
     return (
       <html>

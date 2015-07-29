@@ -3,6 +3,7 @@ let React = require('React/addons');
 let BasePage = require('./base');
 
 let ProjectPage = React.createClass({
+  mixins: [React.addons.PureRenderMixin],
   render() {
     let file = this.props.file;
 
