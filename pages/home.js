@@ -5,7 +5,7 @@ let BasePage = require('./base');
 let HomePage = React.createClass({
   mixins: [React.addons.PureRenderMixin],
   render() {
-    let allPages = this.props.allPages;
+    let allPages = sortProjects(this.props.allPages);
 
     return (
       <BasePage title="Atul’s Portfolio">
@@ -26,6 +26,22 @@ let HomePage = React.createClass({
     );
   }
 });
+
+function sortProjects(projects) {
+  projects = projects.slice();
+
+  projects.sort((a, b) => {
+    if (a.yaml.importance < b.yaml.importance) {
+      return -1;
+    }
+    if (a.yaml.importance > b.yaml.importance) {
+      return 1;
+    }
+    return 0;
+  });
+
+  return projects;
+}
 
 function uncapitalize(str) {
   if (typeof(str) !== 'string') return '';
