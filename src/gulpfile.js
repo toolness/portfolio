@@ -19,7 +19,7 @@ const BUILD_TASKS = [
 
 let paths = {
   projects: 'projects/*.md',
-  vendor: 'vendor/**'
+  vendor: 'vendor/**/*'
 };
 
 function parseYamlFrontMatter() {
