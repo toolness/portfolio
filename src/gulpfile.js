@@ -45,7 +45,7 @@ function renderMarkdown() {
   return through2.obj((file, enc, cb) => {
     file.html = marked(file.markdown, {
       smartypants: true
-    });
+    }).replace(/-\n/g, '-');
     cb(null, file);
   });
 }
