@@ -17,6 +17,7 @@ const BUILD_TASKS = [
   'copy-vendor-files'
 ];
 
+let isWatching = false;
 let paths = {
   projects: 'projects/*.md',
   vendor: 'vendor/**/*'
@@ -49,21 +50,39 @@ function buildHtmlPages() {
   let all = [];
   return through2.obj((file, enc, cb) => {
     let relativeDir = file.relative.match(/(.+)\.md$/)[1];
+    let contents;
+
     file.pageURL = relativeDir.replace(/\\/g, '/') + '/';
+
+    try {
+      contents = pages.renderProjectPage(file);
+    } catch (e) {
+      return cb(e);
+    }
+
     file.page = new File({
       cwd: file.cwd,
       base: file.base,
       path: path.join(file.base, relativeDir, 'index.html'),
-      contents: new Buffer(pages.renderProjectPage(file))
+      contents: new Buffer(contents)
     });
     all.push(file);
     return cb(null, file.page);
   }, function(cb) {
+    let contents;
+
+    try {
+      contents = pages.renderHomePage(all);
+    } catch (e) {
+      e.isFlushError = true;
+      return cb(e);
+    }
+
     this.push(new File({
       cwd: __dirname,
       base: __dirname,
       path: path.join(__dirname, 'index.html'),
-      contents: new Buffer(pages.renderHomePage(all))
+      contents: new Buffer(contents)
     }));
     cb();
   });
@@ -81,10 +100,18 @@ gulp.task('build-html-pages', () => {
     .pipe(parseYamlFrontMatter())
     .pipe(renderMarkdown())
     .pipe(buildHtmlPages())
+    .on('error', function(e) {
+      if (!isWatching) throw e;
+      gutil.log(e.stack);
+      if (e.isFlushError) this.push(null);
+      this.end();
+    })
     .pipe(gulp.dest('./dist'));
 });
 
 gulp.task('watch', BUILD_TASKS, cb => {
+  isWatching = true;
+
   gulp.watch('pages/*.js', () => {
     try {
       pages = pages.reload();
