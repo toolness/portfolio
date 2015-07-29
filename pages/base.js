@@ -15,6 +15,14 @@ let BasePage = React.createClass({
         <body>
           <div className="container">
             {this.props.children}
+            <footer>
+              <hr/>
+              <div className="u-pull-right">
+                <a href="http://toolness.com/">Blog</a>{" | "}
+                <a href="https://docs.google.com/document/d/1UlddgXqlrKmP9L8bRfFItKUuMpiW9mDCKLqX_vi4Opg/pub">Resume</a>{" | "}
+                <a href="https://toolness.github.io/">GitHub</a>
+              </div>
+            </footer>
           </div>
         </body>
       </html>
