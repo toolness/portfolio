@@ -63,7 +63,7 @@ function buildHtmlPages() {
       cwd: __dirname,
       base: __dirname,
       path: path.join(__dirname, 'index.html'),
-      contents: new Buffer(pages.renderIndexPage(all))
+      contents: new Buffer(pages.renderHomePage(all))
     }));
     cb();
   });

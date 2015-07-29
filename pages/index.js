@@ -8,7 +8,7 @@ exports.renderProjectPage = (file) => {
   return React.renderToStaticMarkup(<ProjectPage file={file}/>);
 };
 
-exports.renderIndexPage = (allPages) => {
+exports.renderHomePage = (allPages) => {
   return React.renderToStaticMarkup(<HomePage allPages={allPages}/>);
 };
 
