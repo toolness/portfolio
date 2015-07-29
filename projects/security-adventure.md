@@ -1,6 +1,6 @@
 ---
 title: Security Adventure
-problem: Learning about Web security shouldn't be boring and overwhelming.
+problem: Learning about Web security should be more interactive.
 year: 2013
 importance: 2
 ---
