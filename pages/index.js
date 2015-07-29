@@ -8,6 +8,7 @@ exports.renderProjectPage = (file) => {
       <h1>{file.yaml.problem}</h1>
       <p><strong>{file.yaml.title}</strong> | {file.yaml.year}</p>
       <div dangerouslySetInnerHTML={{__html: file.html}}/>
+      <p><a href=".." title="Go back"><i className="ion-arrow-left-c"></i></a></p>
     </BasePage>
   );
 };

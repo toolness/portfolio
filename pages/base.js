@@ -9,6 +9,7 @@ let BasePage = React.createClass({
           <title>{this.props.title}</title>
           <link rel="stylesheet" href="/vendor/skeleton/normalize.css"/>
           <link rel="stylesheet" href="/vendor/skeleton/skeleton.css"/>
+          <link rel="stylesheet" href="/vendor/ionicons/css/ionicons.css"/>
         </head>
         <body>
           <div className="container">
