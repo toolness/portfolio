@@ -14,6 +14,7 @@ exports.renderProjectPage = (file) => {
 };
 
 function uncapitalize(str) {
+  if (typeof(str) !== 'string') return '';
   return str[0].toLowerCase() + str.slice(1);
 }
 
@@ -28,7 +29,7 @@ exports.renderIndexPage = (allPages) => {
           return (
             <div key={file.pageURL}>
               <h5><a href={file.pageURL}>{file.yaml.title}</a></h5>
-              <p>Because {uncapitalize(file.yaml.problem || '')}</p>
+              <p>Because {uncapitalize(file.yaml.problem)}</p>
             </div>
           );
         })}
