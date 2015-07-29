@@ -8,7 +8,7 @@ exports.renderProjectPage = (file) => {
       <h1>{file.yaml.problem}</h1>
       <p><strong>{file.yaml.title}</strong> | {file.yaml.year}</p>
       <div dangerouslySetInnerHTML={{__html: file.html}}/>
-      <p><a href=".." title="Go back"><i className="ion-arrow-left-c"></i></a></p>
+      <p><a href=".." className="button"><i className="ion-arrow-left-c"></i> Go Back</a></p>
     </BasePage>
   );
 };
@@ -22,7 +22,7 @@ exports.renderIndexPage = (allPages) => {
     <BasePage title="Atul’s Portfolio">
       <h1>Hi, I'm Atul.</h1>
       <p>I'm a <strong>design-driven engineer</strong>.</p>
-      <p>I <strong>empathize</strong> with users, <strong>perceive</strong> problems, and <strong>build</strong> solutions for them.</p>
+      <p>I <strong>empathize</strong> with users, <strong>perceive</strong> opportunities, and <strong>build</strong> solutions for them.</p>
 
         {allPages.map(file => {
           return (
