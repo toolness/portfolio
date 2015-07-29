@@ -32,7 +32,7 @@ function parseYamlFrontMatter() {
       if (name in file.yaml)
         file.yaml[name] = smartypants(file.yaml[name]);
     });
-    file.yaml.importance = parseInt(file.yaml.importance);
+    file.yaml.importance = parseFloat(file.yaml.importance);
     if (isNaN(file.yaml.importance)) {
       file.yaml.importance = Infinity;
     }
