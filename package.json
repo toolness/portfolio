@@ -17,6 +17,7 @@
   },
   "devDependencies": {},
   "scripts": {
+    "build": "gulp",
     "start": "gulp watch",
     "test": "gulp"
   },
