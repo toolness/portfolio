@@ -12,8 +12,9 @@ visualize who was watching us as we browse the Web, with the belief that
 transparency could lead to a better world.
 
 Collusion became the centerpiece for a [TED Talk][] given by the CEO of
-Mozilla and went on to receive a grant from the Ford Foundation. It is
-now known as [Lightbeam][].
+Mozilla, for which I was [interviewed by TED][interview]. It went on to
+receive a grant from the Ford Foundation, and is now known as [Lightbeam][].
 
-[TED Talk]: http://blog.ted.com/meet-collusion-announced-today-onstage-at-ted-u/
+[TED Talk]: http://www.ted.com/talks/gary_kovacs_tracking_the_trackers
+[interview]: http://blog.ted.com/meet-collusion-announced-today-onstage-at-ted-u/
 [Lightbeam]: https://www.mozilla.org/en-US/lightbeam/
