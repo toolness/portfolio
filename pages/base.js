@@ -7,6 +7,7 @@ let BasePage = React.createClass({
       <html>
         <head>
           <meta charSet="utf-8"/>
+          <meta name="viewport" content="width=device-width, initial-scale=1"/>
           <title>{this.props.title}</title>
           <link rel="stylesheet" href="/vendor/skeleton/normalize.css"/>
           <link rel="stylesheet" href="/vendor/skeleton/skeleton.css"/>
