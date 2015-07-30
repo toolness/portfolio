@@ -16,4 +16,11 @@ Minigame Maker, which is a mobile-friendly way to create such games using a
 simple block-based visual programming language, and subsequently "level up" by
 examining the generated HTML5 source code of their game and tinkering with it.
 
+Minicade was designed in collaboration with [Chloe Varelidi][] and 
+described as a tool that "sparked our inner mallrat arcade fiend" by
+[Paper magazine][].
+
 <a class="button button-primary" href="http://minica.de/">Try It</a>
+
+[Chloe Varelidi]: http://varelidi.com/
+[Paper magazine]: http://www.papermag.com/2015/01/these_artists_create_technolog.php
