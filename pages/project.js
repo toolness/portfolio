@@ -6,6 +6,11 @@ let ProjectPage = React.createClass({
   mixins: [React.addons.PureRenderMixin],
   render() {
     let file = this.props.file;
+    let actions = file.yaml.actions.concat([{
+      text: 'Go Back',
+      icon: 'ion-arrow-left-c',
+      url: '..'
+    }]);
 
     return (
       <BasePage title={file.yaml.title}>
@@ -16,7 +21,14 @@ let ProjectPage = React.createClass({
           {file.yaml.cta
            ? <a href={file.yaml.cta.url} className="button button-primary u-full-width">{file.yaml.cta.text}</a>
            : null}
-          <a href=".." className="button u-full-width"><i className="ion-arrow-left-c"></i> Go Back</a>
+          {actions.map((action, i) => {
+            return (
+              <a key={i} href={action.url} className="button u-full-width">
+                {action.icon ? <i className={action.icon}></i> : null}
+                {" " + action.text}
+              </a>
+            );
+          })}
         </p>
       </BasePage>
     );

@@ -6,6 +6,9 @@ importance: 1
 cta:
   text: View The Archived Site
   url: http://hackasaurus.toolness.org/
+actions:
+  - url: https://www.youtube.com/watch?v=AOSAx7karNg
+    text: See A Video Demonstration
 ---
 
 It all started with a blog post called [Kids and The Open Web][]: as a 

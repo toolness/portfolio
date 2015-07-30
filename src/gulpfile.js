@@ -38,6 +38,7 @@ function parseYamlFrontMatter() {
     if (isNaN(file.yaml.importance)) {
       file.yaml.importance = Infinity;
     }
+    file.yaml.actions = file.yaml.actions || [];
     if (typeof(file.yaml.cta) === 'string') {
       file.yaml.cta = {
         text: 'Try It',
