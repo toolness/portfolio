@@ -5,6 +5,7 @@ year: 2009-2010
 importance: 2.5
 cta:
   text: See The Video Demonstration
+  icon: ion-play
   url: https://vimeo.com/4752576
 ---
 In early 2009, building a Firefox add-on was hard: multiple files using

@@ -8,6 +8,7 @@ cta:
   url: http://hackasaurus.toolness.org/
 actions:
   - url: https://www.youtube.com/watch?v=AOSAx7karNg
+    icon: ion-play
     text: See A Video Demonstration
 ---
 

@@ -6,6 +6,7 @@ importance: 1
 cta: http://minica.de/
 actions:
   - url: https://s3.amazonaws.com/toolness-fun/minicade-maker-demo.mp4
+    icon: ion-play
     text: See A Video Demonstration
 ---
 Game Jams are events in which small teams of individuals create tiny games
