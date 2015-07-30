@@ -42,6 +42,7 @@ function parseYamlFrontMatter() {
     if (typeof(file.yaml.cta) === 'string') {
       file.yaml.cta = {
         text: 'Try It',
+        icon: 'ion-erlenmeyer-flask',
         url: file.yaml.cta
       };
     }

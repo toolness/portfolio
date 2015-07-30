@@ -3,9 +3,7 @@ title: Hackasaurus
 problem: No one understands the rich world that lies beneath the surface of every Web page.
 year: 2011-2012
 importance: 1
-cta:
-  text: View The Archived Site
-  url: http://hackasaurus.toolness.org/
+cta: http://hackasaurus.toolness.org/
 actions:
   - url: https://www.youtube.com/watch?v=AOSAx7karNg
     icon: ion-play
