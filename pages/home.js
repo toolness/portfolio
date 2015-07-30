@@ -15,10 +15,10 @@ let HomePage = React.createClass({
 
           {allPages.map(file => {
             return (
-              <div key={file.pageURL}>
-                <h5><a href={file.pageURL}>{file.yaml.title}</a></h5>
+              <a className="project" href={file.pageURL} key={file.pageURL}>
+                <h5>{file.yaml.title}</h5>
                 <p>Because {uncapitalize(file.yaml.problem)}</p>
-              </div>
+              </a>
             );
           })}
 

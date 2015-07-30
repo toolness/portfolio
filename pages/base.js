@@ -11,12 +11,12 @@ let BasePage = React.createClass({
           <link rel="stylesheet" href="/vendor/skeleton/normalize.css"/>
           <link rel="stylesheet" href="/vendor/skeleton/skeleton.css"/>
           <link rel="stylesheet" href="/vendor/ionicons/css/ionicons.css"/>
+          <link rel="stylesheet" href="/css/styles.css"/>
         </head>
         <body>
           <div className="container">
             {this.props.children}
             <footer>
-              <hr/>
               <div className="u-pull-right">
                 <a href="http://toolness.com/">Blog</a>{" | "}
                 <a href="https://docs.google.com/document/d/1UlddgXqlrKmP9L8bRfFItKUuMpiW9mDCKLqX_vi4Opg/pub">Resume</a>{" | "}

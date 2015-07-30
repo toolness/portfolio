@@ -1,0 +1,27 @@
+a.project {
+  display: block;
+  border: 1px solid #bbb;
+  padding: 2rem 1rem 1rem 1rem;
+  margin: 1rem 0;
+  text-decoration: none;
+  color: #555;
+  text-align: center;
+}
+
+a.project:hover, a.project:focus {
+  color: #333;
+  border-color: #888;
+  outline: 0;
+}
+
+a.project h5 {
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: .2rem;
+}
+
+footer {
+  margin-top: 2rem;
+  border-top: 1px dotted gray;
+  margin-bottom: 4rem;
+}

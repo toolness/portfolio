@@ -14,13 +14,15 @@ let pages = require('../pages');
 
 const BUILD_TASKS = [
   'build-html-pages',
-  'copy-vendor-files'
+  'copy-vendor-files',
+  'copy-css'
 ];
 
 let isWatching = false;
 let paths = {
   projects: 'projects/*.md',
-  vendor: 'vendor/**/*'
+  vendor: 'vendor/**/*',
+  css: 'css/*.css'
 };
 
 function parseYamlFrontMatter() {
@@ -99,6 +101,11 @@ gulp.task('copy-vendor-files', () => {
     .pipe(gulp.dest('./dist/vendor'));
 });
 
+gulp.task('copy-css', () => {
+  return gulp.src(paths.css)
+    .pipe(gulp.dest('./dist/css'));
+});
+
 gulp.task('build-html-pages', () => {
   return gulp.src(paths.projects)
     .pipe(parseYamlFrontMatter())
@@ -129,6 +136,8 @@ gulp.task('watch', BUILD_TASKS, cb => {
   gulp.watch(paths.projects, ['build-html-pages']);
 
   gulp.watch(paths.vendor, ['copy-vendor-files']);
+
+  gulp.watch(paths.css, ['copy-css']);
 
   let app = express();
 
