@@ -6,6 +6,7 @@ importance: 2
 cta: http://lovebomb.me/
 actions:
   - url: http://jessicaklein.blogspot.com/2012/01/on-inspiration-and-lovebombs.html
+    icon: ion-document
     text: Read The Blog Post
 ---
 Lovebomb was an attempt to teach HTML and CSS through an interest-driven 

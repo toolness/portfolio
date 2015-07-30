@@ -6,6 +6,7 @@ importance: 2
 cta: http://parchment.toolness.com/
 actions:
   - text: Read The Blog Post
+    icon: ion-document
     url: http://www.toolness.com/wp/2008/06/introducing-parchment/
 ---
 
