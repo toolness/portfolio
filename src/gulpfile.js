@@ -38,6 +38,12 @@ function parseYamlFrontMatter() {
     if (isNaN(file.yaml.importance)) {
       file.yaml.importance = Infinity;
     }
+    if (typeof(file.yaml.cta) === 'string') {
+      file.yaml.cta = {
+        text: 'Try It',
+        url: file.yaml.cta
+      };
+    }
     delete file.yaml.__content;
     cb(null, file);
   });

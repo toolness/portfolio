@@ -3,6 +3,9 @@ title: Hackasaurus
 problem: No one understands the rich world that lies beneath the surface of every Web page.
 year: 2011-2012
 importance: 1
+cta:
+  text: View The Archived Site
+  url: http://hackasaurus.toolness.org/
 ---
 
 It all started with a blog post called [Kids and The Open Web][]: as a 
@@ -15,8 +18,6 @@ and family-friendly program called Hackasaurus.
 
 Hackasaurus was designed in collaboration with [Jess Klein][] and featured
 in [The Atlantic][].
-
-<a class="button button-primary" href="http://hackasaurus.toolness.org/">View The Archived Site</a>
 
 [Kids and The Open Web]: http://www.toolness.com/wp/2009/09/kids-and-the-open-web/
 [Web X-Ray Goggles]: http://goggles.webmaker.org/

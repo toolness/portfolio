@@ -12,7 +12,12 @@ let ProjectPage = React.createClass({
         <h1>{file.yaml.problem}</h1>
         <p><strong>{file.yaml.title}</strong> | {file.yaml.year}</p>
         <div dangerouslySetInnerHTML={{__html: file.html}}/>
-        <p><a href=".." className="button"><i className="ion-arrow-left-c"></i> Go Back</a></p>
+        <p>
+          {file.yaml.cta
+           ? <a href={file.yaml.cta.url} className="button button-primary u-full-width">{file.yaml.cta.text}</a>
+           : null}
+          <a href=".." className="button u-full-width"><i className="ion-arrow-left-c"></i> Go Back</a>
+        </p>
       </BasePage>
     );
   }

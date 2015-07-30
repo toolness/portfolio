@@ -3,6 +3,7 @@ title: Minicade
 problem: Learning to make small games is hard; so is showing them off.
 year: 2014-2015
 importance: 1
+cta: http://minica.de/
 ---
 Game Jams are events in which small teams of individuals create tiny games
 over a short period of time. Unfortunately, it can be hard for newcomers to
@@ -19,8 +20,6 @@ examining the generated HTML5 source code of their game and tinkering with it.
 Minicade was designed in collaboration with [Chloe Varelidi][] and 
 described as a tool that "sparked our inner mallrat arcade fiend" by
 [Paper magazine][].
-
-<a class="button button-primary" href="http://minica.de/">Try It</a>
 
 [Chloe Varelidi]: http://varelidi.com/
 [Paper magazine]: http://www.papermag.com/2015/01/these_artists_create_technolog.php
