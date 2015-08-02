@@ -15,11 +15,11 @@ featured_in:
     url: http://allthingsd.com/20070125/avoid-using-mouse/
     img: /img/logos/wsj.svg
 ---
-At Humanized, we designed a product called *Enso* which built on
-the ideas of human-computer interface expert Jef Raskin to augment
-a desktop GUI by making it both easier to learn *and* more efficient
-to use. It was released in 2007 to positive reviews from
-[The Wall Street Journal][wsj] and [37 Signals][].
+At Humanized, our four-person team designed a product called *Enso* which
+built on the ideas of human-computer interface expert Jef Raskin to augment a
+desktop GUI by making it both easier to learn *and* more efficient to use. It
+was released in 2007 to positive reviews from [The Wall Street Journal][wsj]
+and [37 Signals][].
 
 In 2008, at Mozilla Labs, we created a cousin to Enso called
 *Ubiquity*, which aimed to do the same thing for browsers.
