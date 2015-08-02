@@ -21,6 +21,20 @@ a.project h5 {
   letter-spacing: .2rem;
 }
 
+.featured-in {
+  text-align: center;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: .2rem;
+}
+
+.featured-in img {
+  display: block;
+  margin: 0 auto;
+  height: 2.25rem;
+  opacity: 0.75;
+}
+
 footer {
   font-size: 1.25rem;
   margin-top: 2rem;

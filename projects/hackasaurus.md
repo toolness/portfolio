@@ -8,6 +8,11 @@ actions:
   - url: https://www.youtube.com/watch?v=AOSAx7karNg
     icon: ion-play
     text: See A Video Demonstration
+featured_in:
+  - name: The Atlantic
+    url: http://www.theatlantic.com/technology/archive/2012/01/hackasaurus-x-ray-goggles-for-the-web/250865/
+    img: /img/logos/atlantic.svg
+
 ---
 
 It all started with a blog post called [Kids and The Open Web][]: as a 
@@ -18,10 +23,8 @@ skills peer underneath the surface of any Web page, tinker with it,
 and share their changes. The tool was originally embodied in a kid
 and family-friendly program called Hackasaurus.
 
-Hackasaurus was designed in collaboration with [Jess Klein][] and featured
-in [The Atlantic][].
+Hackasaurus was designed in collaboration with [Jess Klein][].
 
 [Kids and The Open Web]: http://www.toolness.com/wp/2009/09/kids-and-the-open-web/
 [Web X-Ray Goggles]: http://goggles.webmaker.org/
 [Jess Klein]: http://jessicaklein.com/
-[The Atlantic]: http://www.theatlantic.com/technology/archive/2012/01/hackasaurus-x-ray-goggles-for-the-web/250865/

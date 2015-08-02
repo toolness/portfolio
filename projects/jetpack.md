@@ -7,6 +7,10 @@ cta:
   text: See The Video Demonstration
   icon: ion-play
   url: https://vimeo.com/4752576
+featured_in:
+  - name: TechCrunch
+    url: http://techcrunch.com/2009/05/20/strap-in-mozillas-jetpack-may-be-the-next-step-in-browser-extensions/
+    img: /img/logos/techcrunch.png
 ---
 In early 2009, building a Firefox add-on was hard: multiple files using
 obscure formatting rules had to be written, and silently failed if a single

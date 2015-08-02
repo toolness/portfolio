@@ -10,6 +10,10 @@ actions:
   - url: https://vimeo.com/1561578
     icon: ion-play
     text: Watch the Ubiquity trailer
+featured_in:
+  - name: The Wall Street Journal
+    url: http://allthingsd.com/20070125/avoid-using-mouse/
+    img: /img/logos/wsj.svg
 ---
 At Humanized, we designed a product called *Enso* which built on
 the ideas of human-computer interface expert Jef Raskin to augment

@@ -16,6 +16,19 @@ let Action = React.createClass({
   }
 });
 
+let FeaturedIn = React.createClass({
+  mixins: [React.addons.PureRenderMixin],
+  render() {
+    let props = this.props;
+
+    return (
+      <p className="featured-in">As featured in <a href={props.url} alt={props.name}>
+        <img src={props.img}/>
+      </a></p>
+    );
+  }
+});
+
 let ProjectPage = React.createClass({
   mixins: [React.addons.PureRenderMixin],
   render() {
@@ -31,6 +44,9 @@ let ProjectPage = React.createClass({
         <h1>{file.yaml.problem}</h1>
         <p><strong>{file.yaml.title}</strong> | {file.yaml.year}</p>
         <div dangerouslySetInnerHTML={{__html: file.html}}/>
+        {file.yaml.featured_in
+         ? <FeaturedIn {...file.yaml.featured_in[0]}/>
+         : null}
         <p>
           {file.yaml.cta ? <Action action={file.yaml.cta} className="button-primary"/> : null}
           {actions.map((action, i) => {

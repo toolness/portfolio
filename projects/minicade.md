@@ -8,6 +8,10 @@ actions:
   - url: https://s3.amazonaws.com/toolness-fun/minicade-maker-demo.mp4
     icon: ion-play
     text: See A Video Demonstration
+featured_in:
+  - name: Paper
+    url: http://www.papermag.com/2015/01/these_artists_create_technolog.php
+    img: /img/logos/paper.png
 ---
 Game Jams are events in which small teams of individuals create tiny games
 over a short period of time. Unfortunately, it can be hard for newcomers to

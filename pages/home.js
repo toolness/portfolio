@@ -2,6 +2,15 @@ let React = require('React/addons');
 
 let BasePage = require('./base');
 
+let FeaturedIn = React.createClass({
+  mixins: [React.addons.PureRenderMixin],
+  render() {
+    let props = this.props;
+
+    return <p className="featured-in">As featured in <img src={props.img} alt={props.name}/></p>;
+  }
+});
+
 let HomePage = React.createClass({
   mixins: [React.addons.PureRenderMixin],
   render() {
@@ -18,6 +27,9 @@ let HomePage = React.createClass({
               <a className="project" href={file.pageURL} key={file.pageURL}>
                 <h5>{file.yaml.title}</h5>
                 <p>Because {uncapitalize(file.yaml.problem)}</p>
+                {file.yaml.featured_in
+                 ? <FeaturedIn {...file.yaml.featured_in[0]}/>
+                 : null}
               </a>
             );
           })}
