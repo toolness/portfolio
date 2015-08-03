@@ -1,5 +1,5 @@
 ---
-title: Lovebomb
+title: Love Bomb Builder
 problem: No one wants to learn how to code in a vacuum.
 year: 2011-2012
 importance: 2
