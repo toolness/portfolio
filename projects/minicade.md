@@ -13,6 +13,13 @@ featured_in:
     url: http://www.papermag.com/2015/01/these_artists_create_technolog.php
     img: /img/logos/paper.png
 ---
+
+<div class="row" style="margin-bottom: 2rem">
+  <div class="four columns offset-by-four">
+    <img src="http://minica.de/images/minicade.gif" style="width: 100%; max-width: 200px; display: block; margin: 0 auto;">
+  </div>
+</div>
+
 Game Jams are events in which small teams of individuals create tiny games
 over a short period of time. Unfortunately, it can be hard for newcomers to
 make their first game; it can also be difficult to showcase the final output
