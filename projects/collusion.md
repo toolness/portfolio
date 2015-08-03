@@ -9,6 +9,13 @@ featured_in:
     url: http://blog.ted.com/meet-collusion-announced-today-onstage-at-ted-u/
     img: /img/logos/ted.png
 ---
+
+<div class="row" style="margin-bottom: 2rem">
+  <div class="four columns offset-by-four">
+    <img src="/img/collusion.png" style="width: 100%; max-width: 163px; display: block; margin: 0 auto;">
+  </div>
+</div>
+
 While reading Eli Pariser's "The Filter Bubble", I was alarmed by how many
 tracking services were watching the entirety of my behavior on the Web. As
 a way to help myself and others understand it, I created a tool to
