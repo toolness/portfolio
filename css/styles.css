@@ -1,3 +1,8 @@
+html {
+  /* Set base font size to 12px, rather than Skeleton's default of 10px. */
+  font-size: 75%;
+}
+
 a.project {
   display: block;
   border: 1px solid #bbb;
@@ -32,6 +37,7 @@ a.project h5 {
   display: block;
   margin: 0 auto;
   height: 2.25rem;
+  max-width: 100%;
   opacity: 0.66;
 }
 
