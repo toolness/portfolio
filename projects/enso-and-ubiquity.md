@@ -15,6 +15,13 @@ featured_in:
     url: http://allthingsd.com/20070125/avoid-using-mouse/
     img: /img/logos/wsj.svg
 ---
+
+<div class="row" style="margin-bottom: 2rem">
+  <div class="eight columns offset-by-two">
+    <img src="/img/enso-screenshot.png" style="width: 100%; max-width: 443px; display: block; margin: 0 auto;">
+  </div>
+</div>
+
 At Humanized, our four-person team designed a product called *Enso* which
 built on the ideas of human-computer interface expert Jef Raskin to augment a
 desktop GUI by making it both easier to learn *and* more efficient to use. It
