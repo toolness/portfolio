@@ -9,6 +9,13 @@ actions:
     icon: ion-document
     text: Read The Blog Post
 ---
+
+<div class="row" style="margin-bottom: 2rem">
+  <div class="four columns offset-by-four">
+    <img src="http://lovebomb.me/images/lovebomb-person.svg" style="width: 100%; max-width: 300px; display: block; margin: 0 auto;">
+  </div>
+</div>
+
 Lovebomb was an attempt to teach HTML and CSS through an interest-driven 
 approach: let users remix a (relatively) simple "love bomb" for a friend
 by learning a bit of HTML/CSS.
