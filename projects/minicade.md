@@ -16,7 +16,7 @@ featured_in:
 
 <div class="row" style="margin-bottom: 2rem">
   <div class="four columns offset-by-four">
-    <img src="http://minica.de/images/minicade.gif" style="width: 100%; max-width: 200px; display: block; margin: 0 auto;">
+    <img src="http://minica.de/images/minicade.gif" title="This awesome animated GIF is courtesy @multiplane." style="width: 100%; max-width: 200px; display: block; margin: 0 auto;">
   </div>
 </div>
 
