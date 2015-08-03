@@ -18,8 +18,8 @@ let HomePage = React.createClass({
 
     return (
       <BasePage title="Atul’s Portfolio">
-        <h1>Hi, I'm Atul.</h1>
-        <p>I'm a <strong>design-driven engineer</strong>.</p>
+        <h1>Hi, I’m Atul.</h1>
+        <p>I’m a <strong>design-driven engineer</strong>.</p>
         <p>I <strong>empathize</strong> with users, <strong>perceive</strong> opportunities, and <strong>build</strong> solutions for them.</p>
 
           {allPages.map(file => {
