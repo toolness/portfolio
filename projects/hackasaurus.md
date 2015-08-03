@@ -15,6 +15,12 @@ featured_in:
 
 ---
 
+<div class="row" style="margin-bottom: 2rem">
+  <div class="four columns offset-by-four">
+    <img src="http://hackasaurus.toolness.org/images/goggles/supergirl.png" style="width: 100%; max-width: 300px; display: block; margin: 0 auto;">
+  </div>
+</div>
+
 It all started with a blog post called [Kids and The Open Web][]: as a 
 public resource accessible to all, everyone--including kids--benefits from
 understanding the very basics of how it works. This led to the creation
