@@ -8,6 +8,11 @@ actions:
   - url: http://jessicaklein.blogspot.com/2012/01/on-inspiration-and-lovebombs.html
     icon: ion-document
     text: Read The Blog Post
+featured_in:
+  - name: Creative Bloq
+    url: http://www.creativebloq.com/web-design/examples-of-javascript-1233964?page=1
+    img: /img/logos/creative-bloq.png
+
 ---
 
 <div class="row" style="margin-bottom: 2rem">
