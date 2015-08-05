@@ -30,7 +30,12 @@ let paths = {
 function parseYamlFrontMatter() {
   return through2.obj((file, enc, cb) => {
     let contents = file.contents.toString(enc);
-    file.yaml = yamlFront.loadFront(contents);
+    try {
+      file.yaml = yamlFront.loadFront(contents);
+    } catch (e) {
+      return cb(new Error('Error processing YAML front matter for ' +
+                          file.relative + ': ' + e.message));
+    }
     file.markdown = file.yaml.__content;
     ['title', 'problem'].forEach(name => {
       if (name in file.yaml)
@@ -122,16 +127,22 @@ gulp.task('copy-images', () => {
 });
 
 gulp.task('build-html-pages', () => {
+  let handleError = function(e) {
+    if (!isWatching) throw e;
+    if (e.stack)
+      gutil.log(e.stack);
+    else
+      gutil.log(e.message);
+    if (e.isFlushError) this.push(null);
+    this.end();
+  };
+
   return gulp.src(paths.projects)
     .pipe(parseYamlFrontMatter())
+    .on('error', handleError)
     .pipe(renderMarkdown())
     .pipe(buildHtmlPages())
-    .on('error', function(e) {
-      if (!isWatching) throw e;
-      gutil.log(e.stack);
-      if (e.isFlushError) this.push(null);
-      this.end();
-    })
+    .on('error', handleError)
     .pipe(gulp.dest('./dist'));
 });
 
