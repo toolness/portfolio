@@ -25,6 +25,22 @@ let devModeSnippet = (latestVersion) => {
                   JSON.stringify(latestVersion) + ');';
 };
 
+let progressivelyEnhanceImagesSnippet = '(' + (() => {
+  let images = document.querySelectorAll('img[data-progressive-src]');
+  let progressivelyEnhance = function(img) {
+    let newSrc = img.getAttribute('data-progressive-src');
+    let loader = document.createElement('img');
+    loader.onload = function() {
+      img.setAttribute('src', newSrc);
+    };
+    loader.setAttribute('src', newSrc);
+  }
+
+  for (let i = 0; i < images.length; i++) {
+    progressivelyEnhance(images[i]);
+  }
+}).toString() + ')()';
+
 let BasePage = React.createClass({
   mixins: [React.addons.PureRenderMixin],
   render() {
@@ -54,6 +70,7 @@ let BasePage = React.createClass({
           {this.props.inDevMode
            ? <script dangerouslySetInnerHTML={{__html: devModeSnippet(this.props.inDevMode)}}/>
            : null}
+          <script dangerouslySetInnerHTML={{__html: progressivelyEnhanceImagesSnippet}}/>
         </body>
       </html>
     );
