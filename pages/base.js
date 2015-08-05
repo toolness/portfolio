@@ -50,7 +50,6 @@ let BasePage = React.createClass({
           <meta charSet="utf-8"/>
           <meta name="viewport" content="width=device-width, initial-scale=1"/>
           <title>{this.props.title}</title>
-          <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Raleway:400,300,600"/>
           <link rel="stylesheet" href="/vendor/skeleton/normalize.css"/>
           <link rel="stylesheet" href="/vendor/skeleton/skeleton.css"/>
           <link rel="stylesheet" href="/vendor/ionicons/css/ionicons.css"/>

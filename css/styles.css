@@ -1,3 +1,24 @@
+@font-face {
+  font-family: "Raleway";
+  src: url("../vendor/raleway/Raleway-Light.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "Raleway";
+  src: url("../vendor/raleway/Raleway-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Raleway";
+  src: url("../vendor/raleway/Raleway-SemiBold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 600;
+}
+
 html {
   /* Set base font size to 12px, rather than Skeleton's default of 10px. */
   font-size: 75%;
