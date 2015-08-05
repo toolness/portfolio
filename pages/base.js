@@ -29,7 +29,7 @@ let BasePage = React.createClass({
   mixins: [React.addons.PureRenderMixin],
   render() {
     return (
-      <html>
+      <html manifest={this.props.inDevMode ? null : "/cache.appcache"}>
         <head>
           <meta charSet="utf-8"/>
           <meta name="viewport" content="width=device-width, initial-scale=1"/>

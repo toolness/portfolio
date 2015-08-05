@@ -1,4 +1,5 @@
 let path = require('path');
+let fs = require('fs');
 let express = require('express');
 let gulp = require('gulp');
 let gutil = require('gutil');
@@ -10,13 +11,12 @@ let through2 = require('through2');
 let File = require('vinyl');
 
 let smartypants = require('./smartypants');
+let getCacheManifest = require('./cache-manifest');
 let pages = require('../pages');
 
+const DIST_DIR = path.join(__dirname, '..', 'dist');
 const BUILD_TASKS = [
-  'build-html-pages',
-  'copy-vendor-files',
-  'copy-css',
-  'copy-images'
+  'build-cache-manifest',
 ];
 
 let isWatching = null;
@@ -109,7 +109,26 @@ function buildHtmlPages() {
   });
 }
 
+function rebuildCacheManifest() {
+  let filename = path.join(DIST_DIR, 'cache.appcache');
+
+  if (fs.existsSync(filename)) {
+    fs.unlinkSync(filename);
+  }
+
+  if (isWatching) return;
+
+  fs.writeFileSync(filename, getCacheManifest(DIST_DIR));
+}
+
 gulp.task('default', BUILD_TASKS);
+
+gulp.task('build-cache-manifest', [
+  'build-html-pages',
+  'copy-vendor-files',
+  'copy-css',
+  'copy-images'
+], rebuildCacheManifest);
 
 gulp.task('copy-vendor-files', () => {
   return gulp.src(paths.vendor)
@@ -171,9 +190,10 @@ gulp.task('watch', BUILD_TASKS, cb => {
 
   let app = express();
 
-  app.use(express.static(path.join(__dirname, '..', 'dist')));
+  app.use(express.static(DIST_DIR));
 
   gulp.on('task_start', () => { isWatching = new Date(); });
+  gulp.on('task_stop', rebuildCacheManifest);
 
   app.get('/watch', (req, res) => {
     let p = new Promise((resolve, reject) => {
