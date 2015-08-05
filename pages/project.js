@@ -40,7 +40,7 @@ let ProjectPage = React.createClass({
     }]);
 
     return (
-      <BasePage title={file.yaml.title}>
+      <BasePage title={file.yaml.title} inDevMode={this.props.inDevMode}>
         <h1>{file.yaml.problem}</h1>
         <p><strong>{file.yaml.title}</strong> | {file.yaml.year}</p>
         <div dangerouslySetInnerHTML={{__html: file.html}}/>

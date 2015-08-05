@@ -19,7 +19,7 @@ const BUILD_TASKS = [
   'copy-images'
 ];
 
-let isWatching = false;
+let isWatching = null;
 let paths = {
   projects: 'projects/*.md',
   vendor: 'vendor/**/*',
@@ -71,7 +71,7 @@ function buildHtmlPages() {
     file.pageURL = relativeDir.replace(/\\/g, '/') + '/';
 
     try {
-      contents = pages.renderProjectPage(file);
+      contents = pages.renderProjectPage(file, isWatching);
     } catch (e) {
       return cb(e);
     }
@@ -88,7 +88,7 @@ function buildHtmlPages() {
     let contents;
 
     try {
-      contents = pages.renderHomePage(all);
+      contents = pages.renderHomePage(all, isWatching);
     } catch (e) {
       e.isFlushError = true;
       return cb(e);
@@ -135,9 +135,11 @@ gulp.task('build-html-pages', () => {
     .pipe(gulp.dest('./dist'));
 });
 
-gulp.task('watch', BUILD_TASKS, cb => {
-  isWatching = true;
+if (process.argv[2] == 'watch') {
+  isWatching = new Date();
+}
 
+gulp.task('watch', BUILD_TASKS, cb => {
   gulp.watch('pages/*.js', () => {
     try {
       pages = pages.reload();
@@ -159,6 +161,29 @@ gulp.task('watch', BUILD_TASKS, cb => {
   let app = express();
 
   app.use(express.static(path.join(__dirname, '..', 'dist')));
+
+  gulp.on('task_start', () => { isWatching = new Date(); });
+
+  app.get('/watch', (req, res) => {
+    let p = new Promise((resolve, reject) => {
+      if (req.query.latestVersion &&
+          new Date(req.query.latestVersion) < isWatching)
+        return resolve();
+
+      let onTaskStop = () => resolve();
+
+      // 'task_stop' is an Orchestrator event, which gulp is a subclass of:
+      // https://www.npmjs.com/package/orchestrator
+      gulp.once('task_stop', onTaskStop);
+
+      setTimeout(() => {
+        gulp.removeListener('task_stop', onTaskStop);
+        resolve();
+      }, 30000);
+    }).then((result) => {
+      res.send({latestVersion: isWatching});
+    });
+  });
 
   app.listen(8080, function() {
     console.log("Development server is listening on port 8080.");

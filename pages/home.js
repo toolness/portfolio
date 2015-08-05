@@ -17,7 +17,7 @@ let HomePage = React.createClass({
     let allPages = sortProjects(this.props.allPages);
 
     return (
-      <BasePage title="Atul’s Portfolio">
+      <BasePage title="Atul’s Portfolio" inDevMode={this.props.inDevMode}>
         <h1>Hi, I’m Atul.</h1>
         <p>I’m a <strong>design-driven engineer</strong>.</p>
         <p>I <strong>empathize</strong> with users, <strong>perceive</strong> opportunities, and <strong>build</strong> solutions for them.</p>

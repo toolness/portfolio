@@ -1,5 +1,30 @@
 let React = require('react/addons');
 
+let devModeSnippet = (latestVersion) => {
+  return '(' + (latestVersion => {
+    let checkVersion = () => {
+      let req = new XMLHttpRequest();
+
+      req.open('GET', '/watch?latestVersion=' +
+                      encodeURIComponent(latestVersion));
+      req.onload = () => {
+        checkVersion();
+        let newLatestVersion = JSON.parse(req.responseText).latestVersion;
+        window.sessionStorage.latestVersion = newLatestVersion;
+        if (newLatestVersion != latestVersion) {
+          window.location.reload();
+        }
+      };
+      req.onerror = () => {
+        checkVersion();
+      };
+      req.send(null);
+    };
+    checkVersion();
+  }).toString() + ')(window.sessionStorage.latestVersion || ' +
+                  JSON.stringify(latestVersion) + ');';
+};
+
 let BasePage = React.createClass({
   mixins: [React.addons.PureRenderMixin],
   render() {
@@ -26,6 +51,9 @@ let BasePage = React.createClass({
               </div>
             </footer>
           </div>
+          {this.props.inDevMode
+           ? <script dangerouslySetInnerHTML={{__html: devModeSnippet(this.props.inDevMode)}}/>
+           : null}
         </body>
       </html>
     );
