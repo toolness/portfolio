@@ -1,5 +1,6 @@
 let path = require('path');
 let fs = require('fs');
+let {EventEmitter} = require('events');
 let express = require('express');
 let gulp = require('gulp');
 let gutil = require('gutil');
@@ -189,11 +190,19 @@ gulp.task('watch', BUILD_TASKS, cb => {
   gulp.watch(paths.images, ['copy-images']);
 
   let app = express();
+  let watchEmitter = new EventEmitter();
+
+  watchEmitter.setMaxListeners(0);
 
   app.use(express.static(DIST_DIR));
 
+  // These are Orchestrator events, which gulp is a subclass of:
+  // https://www.npmjs.com/package/orchestrator
   gulp.on('task_start', () => { isWatching = new Date(); });
-  gulp.on('task_stop', rebuildCacheManifest);
+  gulp.on('task_stop', () => {
+    rebuildCacheManifest();
+    watchEmitter.emit('task_stop');
+  });
 
   app.get('/watch', (req, res) => {
     let p = new Promise((resolve, reject) => {
@@ -203,12 +212,10 @@ gulp.task('watch', BUILD_TASKS, cb => {
 
       let onTaskStop = () => resolve();
 
-      // 'task_stop' is an Orchestrator event, which gulp is a subclass of:
-      // https://www.npmjs.com/package/orchestrator
-      gulp.once('task_stop', onTaskStop);
+      watchEmitter.once('task_stop', onTaskStop);
 
       setTimeout(() => {
-        gulp.removeListener('task_stop', onTaskStop);
+        watchEmitter.removeListener('task_stop', onTaskStop);
         resolve();
       }, 30000);
     }).then((result) => {
