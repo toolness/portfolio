@@ -47,14 +47,14 @@ let ProjectPage = React.createClass({
         {file.yaml.featured_in
          ? <FeaturedIn {...file.yaml.featured_in[0]}/>
          : null}
-        <p>
+        <div>
           {file.yaml.cta ? <Action action={file.yaml.cta} className="button-primary"/> : null}
           {actions.map((action, i) => {
             return (
               <Action key={i} action={action}/>
             );
           })}
-        </p>
+        </div>
       </BasePage>
     );
   }
