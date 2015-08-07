@@ -24,6 +24,20 @@ html {
   font-size: 75%;
 }
 
+/* For some reason Skeleton's buttons aren't defined in terms of rems, so
+ * we'll scale their pixel values by a factor of 1.2. */
+.button,
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  height: 45.6px;
+  padding: 0 36px;
+  font-size: 13.2px;
+  line-height: 45.6px;
+  border-radius: 4.8px;
+}
+
 a.project {
   display: block;
   border: 1px solid #bbb;
