@@ -22,8 +22,8 @@ let FeaturedIn = React.createClass({
     let props = this.props;
 
     return (
-      <p className="featured-in">As featured in <a href={props.url} alt={props.name}>
-        <img src={props.img}/>
+      <p className="featured-in">As featured in <a href={props.url}>
+        <img src={props.img} alt={props.name}/>
       </a></p>
     );
   }
