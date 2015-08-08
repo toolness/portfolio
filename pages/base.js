@@ -45,7 +45,7 @@ let BasePage = React.createClass({
   mixins: [React.addons.PureRenderMixin],
   render() {
     return (
-      <html manifest={this.props.inDevMode ? null : "/cache.appcache"}>
+      <html manifest={this.props.inDevMode ? null : "/cache.appcache"} lang="en">
         <head>
           <meta charSet="utf-8"/>
           <meta name="viewport" content="width=device-width, initial-scale=1"/>
