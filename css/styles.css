@@ -22,6 +22,7 @@
 html {
   /* Set base font size to 12px, rather than Skeleton's default of 10px. */
   font-size: 75%;
+  background: url(/img/code.svg);
 }
 
 /* For some reason Skeleton's buttons aren't defined in terms of rems, so

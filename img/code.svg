@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="467px" height="672px" viewBox="0 0 467 672" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.3 (12081) - http://www.bohemiancoding.com/sketch -->
+    <title>Slice 1</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <text id="Type-something" sketch:type="MSTextLayer" font-family="Courier" font-size="12" font-weight="normal" fill="#F6F6F6">
+            <tspan x="0" y="11">let React = require('react/addons');  let devModeSnippet = </tspan>
+            <tspan x="0" y="25">(latestVersion) =&gt; {   return '(' + (latestVersion =&gt; {     let </tspan>
+            <tspan x="0" y="39">checkVersion = () =&gt; {       let req = new XMLHttpRequest();        </tspan>
+            <tspan x="0" y="53">req.open('GET', '/watch?latestVersion=' +                       </tspan>
+            <tspan x="0" y="67">encodeURIComponent(latestVersion));       req.onload = () =&gt; </tspan>
+            <tspan x="0" y="81">{         checkVersion();         let newLatestVersion = </tspan>
+            <tspan x="0" y="95">JSON.parse(req.responseText).latestVersion;         </tspan>
+            <tspan x="0" y="109">window.sessionStorage.latestVersion = newLatestVersion;         </tspan>
+            <tspan x="0" y="123">if (newLatestVersion != latestVersion) </tspan>
+            <tspan x="0" y="137">{           window.location.reload();         }       };       </tspan>
+            <tspan x="0" y="151">req.onerror = () =&gt; {         checkVersion();       };       </tspan>
+            <tspan x="0" y="165">req.send(null);     };     checkVersion();   }).toString() + ')</tspan>
+            <tspan x="0" y="179">(window.sessionStorage.latestVersion || ' +                   </tspan>
+            <tspan x="0" y="193">JSON.stringify(latestVersion) + ');'; };  let </tspan>
+            <tspan x="0" y="207">progressivelyEnhanceImagesSnippet = '(' + (() =&gt; {   let images </tspan>
+            <tspan x="0" y="221">= document.querySelectorAll('img[data-progressive-src]');   let </tspan>
+            <tspan x="0" y="235">progressivelyEnhance = function(img) {     let newSrc = </tspan>
+            <tspan x="0" y="249">img.getAttribute('data-progressive-src');     let loader = </tspan>
+            <tspan x="0" y="263">document.createElement('img');     loader.onload = function() </tspan>
+            <tspan x="0" y="277">{       img.setAttribute('src', newSrc);     };     </tspan>
+            <tspan x="0" y="291">loader.setAttribute('src', newSrc);   }    for (let i = 0; i &lt; </tspan>
+            <tspan x="0" y="305">images.length; i++) </tspan>
+            <tspan x="0" y="319">{     progressivelyEnhance(images[i]);   } }).toString() + ')</tspan>
+            <tspan x="0" y="333">()';  let BasePage = React.createClass({   mixins: </tspan>
+            <tspan x="0" y="347">[React.addons.PureRenderMixin],   render() {     return </tspan>
+            <tspan x="0" y="361">(       &lt;html manifest={this.props.inDevMode ? null : "/</tspan>
+            <tspan x="0" y="375">cache.appcache"}&gt;         &lt;head&gt;           &lt;meta </tspan>
+            <tspan x="0" y="389">charSet="utf-8"/&gt;           &lt;meta name="viewport" </tspan>
+            <tspan x="0" y="403">content="width=device-width, initial-scale=1"/&gt;           </tspan>
+            <tspan x="0" y="417">&lt;title&gt;{this.props.title}&lt;/title&gt;           &lt;link </tspan>
+            <tspan x="0" y="431">rel="stylesheet" href="/vendor/skeleton/normalize.css"/&gt;           </tspan>
+            <tspan x="0" y="445">&lt;link rel="stylesheet" href="/vendor/skeleton/skeleton.css"/&gt;           </tspan>
+            <tspan x="0" y="459">&lt;link rel="stylesheet" href="/vendor/ionicons/css/ionicons.css"/</tspan>
+            <tspan x="0" y="473">&gt;           &lt;link rel="stylesheet" href="/css/styles.css"/&gt;         </tspan>
+            <tspan x="0" y="487">&lt;/head&gt;         &lt;body&gt;           &lt;div className="container"&gt;             </tspan>
+            <tspan x="0" y="501">{this.props.children}             &lt;footer&gt;               &lt;ul&gt;                 </tspan>
+            <tspan x="0" y="515">&lt;li&gt;&lt;a href="http://toolness.com/"&gt;Blog&lt;/a&gt;&lt;/li&gt;                 </tspan>
+            <tspan x="0" y="529">&lt;li&gt;&lt;a href="https://docs.google.com/document/d/</tspan>
+            <tspan x="0" y="543">1UlddgXqlrKmP9L8bRfFItKUuMpiW9mDCKLqX_vi4Opg/pub"&gt;Résumé&lt;/a&gt;&lt;/</tspan>
+            <tspan x="0" y="557">li&gt;                 &lt;li&gt;&lt;a href="https://</tspan>
+            <tspan x="0" y="571">toolness.github.io/"&gt;GitHub&lt;/a&gt;&lt;/li&gt;               &lt;/ul&gt;             </tspan>
+            <tspan x="0" y="585">&lt;/footer&gt;           &lt;/div&gt;           </tspan>
+            <tspan x="0" y="599">{this.props.inDevMode            ? &lt;script </tspan>
+            <tspan x="0" y="613">dangerouslySetInnerHTML={{__html: </tspan>
+            <tspan x="0" y="627">devModeSnippet(this.props.inDevMode)}}/&gt;            : null}           </tspan>
+            <tspan x="0" y="641">&lt;script dangerouslySetInnerHTML={{__html: </tspan>
+            <tspan x="0" y="655">progressivelyEnhanceImagesSnippet}}/&gt;         &lt;/body&gt;       &lt;/</tspan>
+            <tspan x="0" y="669">html&gt;     );   } });  module.exports = BasePage; </tspan>
+        </text>
+    </g>
+</svg>
