@@ -4,14 +4,16 @@ let BasePage = require('./base');
 let ProjectPage = require('./project');
 let HomePage = require('./home');
 
+const DOCTYPE = '<!DOCTYPE html>';
+
 exports.renderProjectPage = (file, inDevMode = false) => {
-  return React.renderToStaticMarkup(
+  return DOCTYPE + React.renderToStaticMarkup(
     <ProjectPage file={file} inDevMode={inDevMode}/>
   );
 };
 
 exports.renderHomePage = (allPages, inDevMode = false) => {
-  return React.renderToStaticMarkup(
+  return DOCTYPE + React.renderToStaticMarkup(
     <HomePage allPages={allPages} inDevMode={inDevMode}/>
   );
 };
