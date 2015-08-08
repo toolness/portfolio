@@ -8,6 +8,9 @@ actions:
   - url: https://s3.amazonaws.com/toolness-fun/minicade-maker-demo.mp4
     icon: ion-play
     text: See A Video Demonstration
+  - url: http://toolness.github.io/minicade-slides-jerseyscript/#/
+    icon: ion-ios-albums-outline
+    text: View Slides
 featured_in:
   - name: Paper
     url: http://www.papermag.com/2015/01/these_artists_create_technolog.php
