@@ -39,6 +39,19 @@ input[type="button"] {
   border-radius: 4.8px;
 }
 
+.button:hover,
+button:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover,
+.button:focus,
+button:focus,
+input[type="submit"]:focus,
+input[type="reset"]:focus,
+input[type="button"]:focus {
+  background-color: #f6f6f6;
+}
+
 a.project {
   display: block;
   border: 1px solid #bbb;
@@ -50,6 +63,7 @@ a.project {
 }
 
 a.project:hover, a.project:focus {
+  background-color: #f6f6f6;
   color: #333;
   border-color: #888;
   outline: 0;
