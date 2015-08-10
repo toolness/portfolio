@@ -1,4 +1,4 @@
-let React = require('React/addons');
+let React = require('react/addons');
 
 let BasePage = require('./base');
 let ProjectPage = require('./project');
