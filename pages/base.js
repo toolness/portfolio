@@ -61,7 +61,7 @@ let BasePage = React.createClass({
             <footer>
               <ul>
                 <li><a href="http://toolness.com/">Blog</a></li>
-                <li><a href="https://docs.google.com/document/d/1UlddgXqlrKmP9L8bRfFItKUuMpiW9mDCKLqX_vi4Opg/pub">Résumé</a></li>
+                <li><a href="https://s3.amazonaws.com/toolness-fun/ResumeforAtulVarma.pdf">Résumé</a></li>
                 <li><a href="https://toolness.github.io/">GitHub</a></li>
               </ul>
             </footer>
