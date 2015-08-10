@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/toolness/portfolio.svg?branch=master)](https://travis-ci.org/toolness/portfolio)
+
 This is Atul's portfolio.
 
 ## Quick Start
