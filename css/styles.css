@@ -22,7 +22,11 @@
 html {
   /* Set base font size to 12px, rather than Skeleton's default of 10px. */
   font-size: 75%;
-  background: url(/img/code.svg);
+
+  /* Oops, at some point Chrome changed its behavior to alter the
+   * text color to be high-contrast, which destroys the readability of
+   * the whole site, so we'll disable the background for now. */
+  /* background: url(/img/code.svg); */
 }
 
 /* For some reason Skeleton's buttons aren't defined in terms of rems, so
