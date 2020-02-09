@@ -60,7 +60,7 @@ let BasePage = React.createClass({
             {this.props.children}
             <footer>
               <ul>
-                <li><a href="http://toolness.com/">Blog</a></li>
+                <li><a href="https://www.toolness.com/">Blog</a></li>
                 <li><a href="https://s3.amazonaws.com/toolness-fun/ResumeforAtulVarma.pdf">Résumé</a></li>
                 <li><a href="https://toolness.github.io/">GitHub</a></li>
               </ul>
