@@ -7,7 +7,7 @@ cta: http://parchment.toolness.com/
 actions:
   - text: Read The Blog Post
     icon: ion-document
-    url: http://www.toolness.com/wp/2008/06/introducing-parchment/
+    url: https://www.toolness.com/wp/2008/06/introducing-parchment/
 ---
 
 In 2008, experiencing Interactive Fiction required downloading a native app

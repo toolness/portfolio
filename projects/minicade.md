@@ -13,7 +13,7 @@ actions:
     text: View Slides
 featured_in:
   - name: Paper
-    url: http://www.papermag.com/2015/01/these_artists_create_technolog.php
+    url: https://www.papermag.com/2015/01/these_artists_create_technolog.php
     img: /img/logos/paper.png
 ---
 
