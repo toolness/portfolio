@@ -6,7 +6,7 @@ importance: 1
 cta: http://collusion.toolness.org/
 featured_in:
   - name: TED
-    url: http://blog.ted.com/meet-collusion-announced-today-onstage-at-ted-u/
+    url: https://blog.ted.com/meet-collusion-announced-today-onstage-at-ted-u/
     img: /img/logos/ted.png
 ---
 
