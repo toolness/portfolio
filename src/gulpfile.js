@@ -3,7 +3,7 @@ let fs = require('fs');
 let {EventEmitter} = require('events');
 let express = require('express');
 let gulp = require('gulp');
-let gutil = require('gutil');
+let log = require('fancy-log');
 let gzip = require('gulp-gzip');
 let s3 = require('gulp-s3');
 let yamlFront = require('yaml-front-matter');
@@ -86,7 +86,7 @@ function buildHtmlPages() {
       cwd: file.cwd,
       base: file.base,
       path: path.join(file.base, relativeDir, 'index.html'),
-      contents: new Buffer(contents)
+      contents: Buffer.from(contents)
     });
     all.push(file);
     return cb(null, file.page);
@@ -104,32 +104,24 @@ function buildHtmlPages() {
       cwd: __dirname,
       base: __dirname,
       path: path.join(__dirname, 'index.html'),
-      contents: new Buffer(contents)
+      contents: Buffer.from(contents)
     }));
     cb();
   });
 }
 
-function rebuildCacheManifest() {
+function rebuildCacheManifest(done) {
   let filename = path.join(DIST_DIR, 'cache.appcache');
 
   if (fs.existsSync(filename)) {
     fs.unlinkSync(filename);
   }
 
-  if (isWatching) return;
+  if (isWatching) return done();
 
   fs.writeFileSync(filename, getCacheManifest(DIST_DIR));
+  done();
 }
-
-gulp.task('default', BUILD_TASKS);
-
-gulp.task('build-cache-manifest', [
-  'build-html-pages',
-  'copy-vendor-files',
-  'copy-css',
-  'copy-images'
-], rebuildCacheManifest);
 
 gulp.task('copy-vendor-files', () => {
   return gulp.src(paths.vendor)
@@ -150,9 +142,9 @@ gulp.task('build-html-pages', () => {
   let handleError = function(e) {
     if (!isWatching) throw e;
     if (e.stack)
-      gutil.log(e.stack);
+      log(e.stack);
     else
-      gutil.log(e.message);
+      log(e.message);
     if (e.isFlushError) this.push(null);
     this.end();
   };
@@ -166,28 +158,37 @@ gulp.task('build-html-pages', () => {
     .pipe(gulp.dest('./dist'));
 });
 
+gulp.task('build-cache-manifest', gulp.series(
+  'build-html-pages',
+  'copy-vendor-files',
+  'copy-css',
+  'copy-images',
+  rebuildCacheManifest
+));
+
 if (process.argv[2] == 'watch') {
   isWatching = new Date();
 }
 
-gulp.task('watch', BUILD_TASKS, cb => {
-  gulp.watch('pages/*.js', () => {
-    try {
-      pages = pages.reload();
-    } catch (e) {
-      console.log(e.stack);
-      return;
-    }
-    gulp.start('build-html-pages');
-  });
+gulp.task('reload-pages', done => {
+  try {
+    pages = pages.reload();
+  } catch (e) {
+    console.log(e.stack);
+  }
+  done();
+});
 
-  gulp.watch(paths.projects, ['build-html-pages']);
+gulp.task('watch', gulp.series(...BUILD_TASKS, cb => {
+  gulp.watch('pages/*.js', gulp.series('reload-pages', 'build-html-pages'));
 
-  gulp.watch(paths.vendor, ['copy-vendor-files']);
+  gulp.watch(paths.projects, gulp.series('build-html-pages'));
 
-  gulp.watch(paths.css, ['copy-css']);
+  gulp.watch(paths.vendor, gulp.series('copy-vendor-files'));
 
-  gulp.watch(paths.images, ['copy-images']);
+  gulp.watch(paths.css, gulp.series('copy-css'));
+
+  gulp.watch(paths.images, gulp.series('copy-images'));
 
   let app = express();
   let watchEmitter = new EventEmitter();
@@ -226,13 +227,13 @@ gulp.task('watch', BUILD_TASKS, cb => {
   app.listen(8080, function() {
     console.log("Development server is listening on port 8080.");
   });
-});
+}));
 
-gulp.task('s3', BUILD_TASKS, function() {
+gulp.task('s3', gulp.series(...BUILD_TASKS, function() {
   let key = process.env.AWS_ACCESS_KEY;
   let secret = process.env.AWS_SECRET_KEY;
 
-  gutil.log('NODE_ENV is ' + process.env.NODE_ENV + '.');
+  log('NODE_ENV is ' + process.env.NODE_ENV + '.');
 
   if (!key || !secret) {
     throw new Error('Please set AWS_ACCESS_KEY and AWS_SECRET_KEY ' +
@@ -255,4 +256,6 @@ gulp.task('s3', BUILD_TASKS, function() {
         'Cache-Control': 'max-age=600, public'
       }
     }));
-});
+}));
+
+gulp.task('default', gulp.series(...BUILD_TASKS));
