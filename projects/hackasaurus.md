@@ -10,7 +10,7 @@ actions:
     text: See A Video Demonstration
 featured_in:
   - name: The Atlantic
-    url: http://www.theatlantic.com/technology/archive/2012/01/hackasaurus-x-ray-goggles-for-the-web/250865/
+    url: https://www.theatlantic.com/technology/archive/2012/01/hackasaurus-x-ray-goggles-for-the-web/250865/
     img: /img/logos/atlantic.svg
 
 ---
