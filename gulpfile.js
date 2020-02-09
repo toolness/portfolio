@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 require('@babel/register');
 
 // This file is tiny because we want to be able to use JSX.

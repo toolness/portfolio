@@ -237,7 +237,7 @@ gulp.task('s3', gulp.series(...BUILD_TASKS, function() {
 
   if (!key || !secret) {
     throw new Error('Please set AWS_ACCESS_KEY and AWS_SECRET_KEY ' +
-    'in your environment.');
+    'in your .env file or environment.');
   }
 
   // WARNING: Even if deploying to S3 fails, no errors will be raised.
