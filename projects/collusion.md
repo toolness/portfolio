@@ -26,5 +26,5 @@ Collusion became the centerpiece for a [TED Talk][] given by the CEO of
 Mozilla. It went on to receive a grant from the Ford Foundation, and is now
 known as [Lightbeam][].
 
-[TED Talk]: http://www.ted.com/talks/gary_kovacs_tracking_the_trackers
+[TED Talk]: https://www.ted.com/talks/gary_kovacs_tracking_the_trackers
 [Lightbeam]: https://www.mozilla.org/en-US/lightbeam/
